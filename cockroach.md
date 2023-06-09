@@ -28,7 +28,7 @@ if not getgenv().Network then
 		CharacterRelative = false;
 	}
 
-	Network["Output"].Send(print,": Loading.")
+   Network["Output"].Send(print,": Loading.")
 	Network["Velocity"] = Vector3.new(14.46262424,14.46262424,14.46262424); --exactly 25.1 magnitude
 	Network["RetainPart"] = function(Part,ReturnFakePart) --function for retaining ownership of unanchored parts
 		assert(typeof(Part) == "Instance" and Part:IsA("BasePart") and Part:IsDescendantOf(workspace),Network["Output"].Prefix.."RetainPart Error : Invalid syntax: Arg1 (Part) must be a BasePart which is a descendant of workspace.")
@@ -55,7 +55,7 @@ if not getgenv().Network then
 		end
 	end
 
-	Network["RemovePart"] = function(Part) --function for removing ownership of unanchored part
+Network["RemovePart"] = function(Part) --function for removing ownership of unanchored part
 		assert(typeof(Part) == "Instance" and Part:IsA("BasePart"),Network["Output"].Prefix.."RemovePart Error : Invalid syntax: Arg1 (Part) must be a BasePart.")
 		local Index = table.find(Network["BaseParts"],Part)
 		if Index then
@@ -63,14 +63,14 @@ if not getgenv().Network then
 		end
 	end
 
-	Network["SuperStepper"] = Instance.new("BindableEvent") --make super fast event to connect to
+Network["SuperStepper"] = Instance.new("BindableEvent") --make super fast event to connect to
 	for _,Event in pairs({RunService.Stepped,RunService.Heartbeat}) do
 		Event:Connect(function()
 			return Network["SuperStepper"]:Fire(Network["SuperStepper"],tick())
 		end)
 	end
 
-	Network["PartOwnership"] = {};
+Network["PartOwnership"] = {};
 	Network["PartOwnership"]["PreMethodSettings"] = {};
 	Network["PartOwnership"]["Enabled"] = false;
 	Network["PartOwnership"]["Enable"] = coroutine.create(function() --creating a thread for network stuff
@@ -170,10 +170,10 @@ if CoolMusic == true then
 	game:GetService("RunService").RenderStepped:Connect(function()
 		MusicPart.Color = Color3.fromHSV(tick()%5/5,1,1) 
 
-		local rayOrigin = Bug.Position 
+local rayOrigin = Bug.Position 
 		local raycastResult = workspace:Raycast(rayOrigin, rayDirection, raycastParams)
 
-		if raycastResult then
+if raycastResult then
 			MusicPart.Position = raycastResult.Position
 		else
 			MusicPart.Position = Vector3.new(0,99999999,0)
@@ -189,7 +189,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 		local rayOrigin = (CFrame.lookAt(Bug.CFrame.Position+Vector3.new(0,2,0), Camera.CFrame.Position) * CFrame.new(0,0,1)).Position
 		local raycastResult = workspace:Raycast(rayOrigin, rayDirection, raycastParams)
 
-		if raycastResult then
+if raycastResult then
 			BUGCFRAME=CFrame.new(raycastResult.Position)*CFrame.new(0,Bug.Size.Y/2,0)
 		end
 	end
@@ -213,7 +213,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 	local Loudness = Music.PlaybackLoudness / 100
 	local camRotation = math.atan2(-Camera.CFrame.LookVector.X, -Camera.CFrame.LookVector.Z) - (Camera.CFrame.LookVector.X/4.3)-- X Rotation mixed with Z Rotation
 
-	MusicPart.Size = Vector3.new(0,25,Loudness,Loudness)
+MusicPart.Size = Vector3.new(0,25,Loudness,Loudness)
 	Bug.CFrame = BUGCFRAME * CFrame.Angles(0,camRotation,0)
 end)
 
