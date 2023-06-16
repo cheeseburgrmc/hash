@@ -1,7 +1,40 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "gg hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
- 
- 
+local Window = OrionLib:MakeWindow({Name = "private key system", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+OrionLib:MakeNotification({
+	Name = "account",
+	Content = "your logged in as a bitch",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "marshmellow"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+  print("yay you got the key right")
+end
+
+
+local Tab = Window:MakeTab({
+	Name = "key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddTextbox({
+	Name = "key",
+	Default = "key",
+	TextDisappear = false,
+	Callback = function(Value)
+		_G.KeyInput = Value
+		print("KeyInput")
+	end	  
+})
+Tab:AddButton({
+	Name = "key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+      		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "private script", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
  -- window
 local Tab = Window:MakeTab({
 	Name = "universal scripts",
@@ -67,8 +100,6 @@ Name = "infinite jump",
 loadstring(game:HttpGet("https://pastebin.com/raw/Q0F1njnh"))()
   	end    
 })
-if Game.PlaceID == 13275016320
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "gg hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
  
@@ -145,3 +176,8 @@ Name = "best fe script!?!",
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
   	end    
 })
+
+      		end
+  	end    
+})
+
