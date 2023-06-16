@@ -169,6 +169,12 @@ Name = "infinite jump",
 loadstring(game:HttpGet("https://pastebin.com/raw/Q0F1njnh"))()
   	end    
 })
+local Tab = Window:MakeTab({
+	Name = "private scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 Tab:AddButton({
 Name = "best fe script!?!",
 	Callback = function(Value)
@@ -180,4 +186,5 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFES
       		end
   	end    
 })
+
 
