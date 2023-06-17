@@ -182,7 +182,26 @@ Name = "best fe script!?!",
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
   	end    
 })
-
+ -- window
+local Tab = Window:MakeTab({
+	Name = "sandhurst scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "inf gun ammo (must be freegun)",
+	Callback = function()
+      		print("button pressed")
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/cheeseburgrmc/sandhursts/main/sandhurst%3F!%40%23'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "infinite yield again",
+	Callback = function()
+      		print("button pressed")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
       		end
   	end    
 })
