@@ -202,8 +202,21 @@ Tab:AddButton({
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   	end    
 })
-      		end
+ -- window
+local Tab = Window:MakeTab({
+	Name = "utmm crash",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = the crash",
+	Callback = function()
+      		print("button pressed")
+--[ put this
   	end    
 })
 
+      		end
+  	end    
+})
 
