@@ -1,1 +1,9 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "private key system", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+OrionLib:MakeNotification({
+	Name = "account",
+	Content = "your logged in as a bitch",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
