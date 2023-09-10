@@ -12173,5 +12173,6 @@ if IsOnMobile then
 	QuickCapture.TextSize = 20.000
 	QuickCapture.TextWrapped = true
 	QuickCapture.Draggable = true
+end
 	UICorner.Name = randomString()
 	UICorner.CornerRadius = UDim.new(0.5, 0)
